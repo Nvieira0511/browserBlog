@@ -15,9 +15,14 @@ class Items extends Page{
         super();
         this.oItems = oItems;
         this.nCurrentItem = 0;
-        $(".itemLink").on("click", (evt) =>{
+        $("article#items").click((evt) =>{
             evt.preventDefault();
-            alert("clicked " + this.oItems[this.nCurrentItem].title);
+            this.nCurrentItem=evt.target.id[4];
+            $("article#current").html("");
+            $("article#items").html("");
+
+            // alert("clicked " + this.oItems[this.nCurrentItem].title);
+            this.render();
 
         });
     }
@@ -35,8 +40,8 @@ class Items extends Page{
         for(let n = 0; n < this.oItems.length; n++){
             if(n != this.nCurrentItem){
                 $("article#items").append(`
-                <div class="item"><a id="item${n}" class="itemLink" href="#">
-                <img src="${this.oItems[n].specialImage}" /></a></div>
+                <div class="item"><a class="itemLink" href="#">
+                <img id="item${n}" src="${this.oItems[n].specialImage}" /></a></div>
                 `);
            }
         }

@@ -36,7 +36,6 @@ class Items extends Page{
             )
 
         })
-
         for(let n = 0; n < this.oItems.length; n++){
             if(n != this.nCurrentItem){
                 $("article#items").append(`

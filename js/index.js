@@ -5,44 +5,52 @@ import aPages from "../pages/index.js";
 import aItems from "../items/index.js";
 
 class Page {
+    constructor(){
+        this.sName = "Nathan Vieira";
+        const sBase = document.location.pathname;
+        if(sBase[sBase.length - 1] == "/"){
+            this.sBase = sBase.substr(0, sBase.length -1);
+        }else{
+            const sFile = '/' + document.location.pathname.split('/').pop();
+            this.sBase = sBase.substr(0, sBase.length - sFile.length); 
+        }
+    }
+    getImageSrc(sImage){
+        if(sImage.match(/\:\/\//)){
+            return sImage;
+        }else{
+            return this.sBase + sImage;
+        }
+    }
     render() {
         console.log("render called on page");
     }
 }
 
-class Items extends Page{
+class Items extends Page {
     constructor(oItems) {
         super();
         this.oItems = oItems;
         this.nCurrentItem = 0;
-        $("article#items").click((evt) =>{
+        $("article#items").click((evt) => {
             evt.preventDefault();
-            this.nCurrentItem=evt.target.id[4];
+            this.nCurrentItem = evt.target.id[4];
             $("article#current").html("");
             $("article#items").html("");
-
             // alert("clicked " + this.oItems[this.nCurrentItem].title);
             this.render();
-
         });
     }
-    render(){
-        $("article#current").append(`
-            <img src="${this.oItems[this.nCurrentItem].specialImage}" />
-        `);
-        $.get(`/items/${this.oItems[this.nCurrentItem].fname}`, (sMarkdown) => {
-            $("article#current").append(
-                marked(sMarkdown)
-            )
-
-        })
-        for(let n = 0; n < this.oItems.length; n++){
-            if(n != this.nCurrentItem){
-                $("article#items").append(`
-                <div class="item"><a class="itemLink" href="#">
-                <img id="item${n}" src="${this.oItems[n].specialImage}" /></a></div>
+    render() {
+        for (let n = 0; n < this.oItems.length; n++) {
+            $.get(`${this.sBase}/items/${this.oItems[n].fname}`, (sMarkdown) => {
+                $("article#current").append(`
+                <img src="${this.getImageSrc(this.oItems[n].specialImage)}" />
                 `);
-           }
+                $("article#current").append(
+                    `<div class="aside">${marked(sMarkdown)}</div>`
+                )
+            })
         }
     }
 
@@ -56,10 +64,10 @@ class Section extends Page {
     render() {
         if (this.oOptions.specialImage) {
             $(`#${this.oOptions.title}`).append(`
-            <img src="${this.oOptions.specialImage}" />
+            <img src="${this.getImageSrc(this.oOptions.specialImage)}" />
             `);
         }
-        $.get(`/pages/${this.oOptions.fname}`, (sMarkdown) => {
+        $.get(`${this.sBase}/pages/${this.oOptions.fname}`, (sMarkdown) => {
             $(`#${this.oOptions.title}`).append(
                 marked(sMarkdown)
             )
@@ -79,16 +87,16 @@ class Article extends Page {
     }
 }
 
-const sName = "Richard Hildred";
+const sName = "Nathan Vieira";
 
-class Footer extends Page {
-    render() {
-        const yToday = new Date().getFullYear();
-        $("footer").html(
-            `&copy; ${yToday} ${sName}`
-        );
-    }
-}
+// class Footer extends Page {
+//     render() {
+//         const yToday = new Date().getFullYear();
+//         $("footer").html(
+//             `&copy; ${yToday} ${sName}`
+//         );
+//     }
+// }
 
 class Nav extends Page {
     render() {
@@ -130,14 +138,14 @@ class Portfolio extends Page {
         this.nav = new Nav();
         this.items = new Items(aItems);
         this.article = new Article();
-        this.footer = new Footer();
+        // this.footer = new Footer();
     }
     render() {
         this.header.render();
         this.nav.render();
         this.items.render();
         this.article.render();
-        this.footer.render();
+        // this.footer.render();
     }
 }
 

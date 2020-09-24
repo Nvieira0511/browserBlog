@@ -4,8 +4,52 @@
     margin-right: 0;
 }
 
-article#items{
+/* article#items{
     display: flex;
     overflow-x: auto;
     overflow-y: hidden;
+} */
+
+#Title{
+    padding-left: 10em;
+    padding-bottom: 5em;
+    padding-top: 1em;
 }
+
+.aside {
+    width: 40%;
+    margin-right: 16em;
+    margin-left: 2em;
+    float: right;
+}
+
+.aside img{
+    width: 16em;
+    padding-right: 1em;
+}
+
+button {
+    background-color: #337FED;
+    border-radius: 20px;
+    width: 125px;
+    height: 30px;
+    color: white;
+    border: none;
+    font-weight: bold;
+}
+button:hover {
+    background: #1E62D0;
+    border: solid #337FED 0px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    text-decoration: none;
+}
+#email{
+    text-decoration: none;
+    color: black;
+    font-size: 1.5em;
+    text-decoration: underline;
+}
+
+

@@ -10,10 +10,3 @@ export default [{"id": "item1",
 "title":"Easy Rx", 
 "fname":"easyRx.md", 
 "specialImage":"/img/EasyRxHome.png"}];
-
-
-// ,
-// {"id": "item3", 
-// "title":"Lame Games", 
-// "fname":"lame_games.md", 
-// "specialImage":"/img/twiliobot750x500_z7anzp.png"}];

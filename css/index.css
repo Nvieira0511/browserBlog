@@ -6,6 +6,7 @@
 body{
     background: rgb(85,85,85);
     background: linear-gradient(0deg, rgba(85,85,85,1) 0%, rgba(255,255,255,1) 3%, rgba(255,255,255,1) 95%, rgba(0,0,0,1) 100%);
+    /* padding-bottom: 10em; */
 }
 
 /* article#items{
@@ -61,4 +62,43 @@ button:hover {
     text-decoration: underline;
 }
 
+video{
+    max-width: 100vw;
+    max-height: 100vh;
+    margin-left: 30em;
+    width: 50%;
+    height: 50%;
+}
+h2{
+    padding-left: 15em;
+}
 
+#thanks{
+    text-decoration: none;
+    color: black;
+    font-size: 1em;
+    text-decoration: underline;
+    padding-left: 11em;
+}
+
+#video{
+    margin-left: 31em;
+}
+
+label{
+    padding-top: 1em;
+    font-size: large;
+}
+
+input{
+    margin-bottom: 1em;
+}
+#sub{
+    background-color: #337FED;
+    border-radius: 20px;
+    width: 125px;
+    height: 30px;
+    color: white;
+    border: none;
+    font-weight: bold;
+}

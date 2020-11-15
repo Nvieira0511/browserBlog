@@ -69,9 +69,9 @@ class Section extends Page {
         }
         $.get(`${this.sBase}/pages/${this.oOptions.fname}`, (sMarkdown) => {
             $(`#${this.oOptions.title}`).append(
-                marked(sMarkdown)
-            )
-
+                marked
+                (sMarkdown)
+                )
         })
     }
 }

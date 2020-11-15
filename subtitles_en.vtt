@@ -1,0 +1,77 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:02.200
+Hey there.
+
+2
+00:00:04.050 --> 00:00:09.130
+Today we're building a portfolio by utilizing JavaScript, HTML, JQuery and Markdown.
+
+3
+00:00:10.160 --> 00:00:12.220
+I'll quickly scroll through the project now.
+
+4
+00:00:28.210 --> 00:00:33.170
+We'll be using its current structure to render a collection of images and descriptions of projects.
+
+5
+00:00:38.040 --> 00:00:41.110
+The descriptions will be written in markdown.
+
+6
+00:00:42.120 --> 00:00:44.160
+Here are some doggy pics to keep your attention.
+
+7
+00:00:50.090 --> 00:00:53.050
+Import the items file to use, and alter the page class as shown.
+
+8
+00:00:53.053 --> 00:00:55.170
+This way we can define the path to render the correct elements in our portfolio.
+
+9
+00:00:56.020 --> 00:00:57.220
+Here is the items class which we use jquery.
+
+10
+00:00:57.230 --> 00:01:01.100
+We can render html and images depending on its pages index class code.
+
+11
+00:01:02.040 --> 00:01:06.190
+Here is the section object which will contain our special images and the markdown content.
+
+12
+00:01:07.030 --> 00:01:10.030
+comment out footer content, as we will not use a footer.
+
+13
+00:01:10.170 --> 00:01:15.000
+Markdown code to add a description of the first project.
+
+14
+00:01:15.200 --> 00:01:20.000
+Code for project 2
+
+15
+00:01:15.200 --> 00:01:25.010
+The items js folder will tag the correct data to our objects
+
+16
+00:01:25.170 --> 00:01:29.230
+Here is the images folder.
+
+17
+00:01:30.210 --> 00:01:35.000
+Add some Css to achieve our desired result.
+
+18
+00:01:40.180 --> 00:01:45.000
+Heres our new portfolio!
+
+19
+00:01:50.230 --> 00:01:53.000
+Heres our new portfolio!

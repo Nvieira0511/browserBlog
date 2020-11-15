@@ -1,0 +1,14 @@
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css');
+
+#success{
+    font-size: large;
+    background-color: grey;
+    width: 26em;
+    height: 10em;
+    margin-left: 35em;
+    margin-top: 15em;
+}
+#success h2{
+    width: 20em;
+    padding: 2em;
+}
